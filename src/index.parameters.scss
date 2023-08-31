@@ -1,0 +1,24 @@
+:root {
+  --scrollbar-size: 8px;
+  --gutter-xs: 4px;
+  --gutter-sm: 8px;
+  --gutter-md: 12px;
+  --gutter-lg: 24px;
+  --gutter-xl: 32px;
+  --gutter-2xl: 48px;
+
+  --font-size-md: 14px;
+  --font-size-lg: 18px;
+  --font-size-xl: 24px;
+  --font-size-2xl: 32px;
+
+  --color-grey: rgba(97, 92, 92, 0.63);
+  --color-darkgrey: #333;
+
+  --color-light: white;
+  --color-dark: black;
+  --linear-gradient-yellow-orange: linear-gradient(315deg, rgba(251, 176, 52) 0%, rgba(252, 221, 0) 70%);
+  --linear-gradient-black-blue: linear-gradient(to bottom right, #010115, #1d5a96, #010115) !important;
+  --linear-gradient-black: linear-gradient(to bottom right, #1d5a96, #010115, #1d5a96) !important;
+  --box-shadow-medium: 2px 7px 12px 4px rgba(255, 255, 255, 0.2);
+}

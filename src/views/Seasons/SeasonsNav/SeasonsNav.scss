@@ -1,0 +1,39 @@
+.seasons-nav {
+  display: flex;
+  flex-wrap: wrap;
+  padding: var(--gutter-sm);
+  justify-content: space-around;
+  width: 100%;
+}
+
+.seasons-nav__season {
+  display: flex;
+  flex-wrap: wrap;
+  padding: var(--gutter-sm);
+  cursor: pointer;
+  flex-direction: column;
+}
+
+.seasons-nav__season__title {
+  margin: var(--gutter-md) auto auto auto;
+}
+.seasons-nav__season__thumbnail {
+  height: 200px;
+}
+
+.seasons-nav__season {
+  margin: var(--gutter-md);
+  border-radius: 6px;
+
+  &:hover {
+    transform: scale(1.05);
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0px 0px 9px 3px rgba(255, 255, 255, 0.35)
+
+  }
+}
+.seasons-nav__season.selected {
+  transform: scale(1.05);
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0px 0px 9px 4px rgb(236 212 54 / 65%)
+}

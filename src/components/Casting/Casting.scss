@@ -1,0 +1,34 @@
+.casting {
+  display: flex;
+  color: var(--color-light);
+  .card {
+    width: 140px;
+    flex-shrink: 0;
+  }
+
+  &__actors,
+  &__directors {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+    &__text {
+      width: 100%;
+      font-size: var(--font-size-lg);
+      margin: var(--gutter-md) 0;
+    }
+
+    .horizontal-scrollbar {
+      flex-grow: 1;
+    }
+  }
+
+  &__directors {
+    max-width: 20vw;
+    margin-right: var(--gutter-md);
+  }
+
+  &__actors {
+    overflow: hidden;
+  }
+}

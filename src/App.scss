@@ -1,0 +1,23 @@
+.container {
+  margin: 0 var(--gutter-lg);
+
+  &.no-padding {
+    margin: 0;
+  }
+}
+
+button,
+input {
+  border-radius: 12px;
+  border: none;
+  padding: var(--gutter-md);
+  outline: none;
+}
+
+html {
+  min-height: 100vh;
+}
+
+body {
+  background: var(--linear-gradient-black-blue)
+}
