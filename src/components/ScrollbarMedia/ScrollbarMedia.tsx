@@ -21,14 +21,7 @@ function ScrollbarMedia({medias, displayReleaseDate, loading, stateChanged = fal
       {!loading && medias?.length >= 0 ? (
         <ScrollbarHorizontal>
           {medias?.map((media: Movie | TvShow) => (
-                <div key={uuidv4()}>
-                  <Media key={uuidv4()} className="scrollbar-media__media" media={media} hasActions />
-                  {displayReleaseDate && (
-                  <span className="scrollbar-media__release-date">
-                    {formatDate(media?.releaseDate, 'D MMMM YYYY')}
-                  </span>
-                )}
-              </div>
+              <Media key={uuidv4()} className="scrollbar-media__media" displayReleaseDate={displayReleaseDate} media={media} hasActions />
             ))}
         </ScrollbarHorizontal>
       ) : (

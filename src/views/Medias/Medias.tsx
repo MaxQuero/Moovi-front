@@ -9,6 +9,7 @@ import Search from '../../components/Search/Search';
 import ScrollbarMedia from '../../components/ScrollbarMedia/ScrollbarMedia';
 import {Movie, TvShow,} from "../../generated/graphql";
 import {useMedias} from "./Medias.hook";
+import MediasList from '../../components/MediasList/MediasList';
 
 type MediasProps = {
     mediaType: MediaEnum;
@@ -47,17 +48,6 @@ function Medias({mediaType = MediaEnum.Movie}: MediasProps) {
         <div className="medias">
             <Carousel loading={loadingPopularMedias} medias={popularMedias}/>
 
-            <Search mediaType={mediaType} searchMedias={(searchQuery: string) => {
-              getSearchResults({
-                variables: {
-                  mediaType: mediaType,
-                  query: searchQuery,
-                  sessionId: sessionId,
-                  page: 1
-                },
-                fetchPolicy: 'network-only'
-              })
-            }}/>
             {searchResults.length > 0 ? (
                 <section className="medias__section">
                     <div className="medias__results">
@@ -69,21 +59,28 @@ function Medias({mediaType = MediaEnum.Movie}: MediasProps) {
                 </section>
             ) : (
                 <section className="medias__section">
-                    <div className="medias__section__occ medias__trending">
-                        <p className="medias__section__title">Tendances</p>
-                        <ScrollbarMedia loading={loadingTrendingMedias} medias={trendingMedias}/>
-                    </div>
-
-                    <div className="medias__section__occ medias__on-the-air">
-                        <p className="medias__section__title"> {onTheAirLabel}</p>
-                        <ScrollbarMedia loading={loadingOnTheAirMedias} medias={onTheAirMedias}/>
-                    </div>
-
-                    <div className="medias__section__occ medias__latest">
-                        <p className="medias__section__title">Prochaines sorties</p>
-                        <ScrollbarMedia loading={loadingLatestMedias} medias={latestMedias}
-                                        displayReleaseDate/>
-                    </div>
+                     <MediasList
+                        className="media__trending-medias"
+                        title="Tendances"
+                        setElementsFilteredFunc={getTrendingMedias}
+                        loading={loadingTrendingMedias}
+                        medias={trendingMedias}
+                    />
+                    <MediasList
+                        className="media__trending-in-theatres"
+                        title="Actuellement au cinéma"
+                        setElementsFilteredFunc={getOnTheAirMedias}
+                        loading={loadingOnTheAirMedias}
+                        medias={onTheAirMedias}
+                    />
+                    <MediasList
+                        className="media__trending-upcoming"
+                        title="Prochaines sorties"
+                        setElementsFilteredFunc={getLatestMedias}
+                        loading={loadingLatestMedias}
+                        medias={latestMedias}
+                        displayReleaseDate
+                    />
                 </section>
             )}
         </div>

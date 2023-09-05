@@ -10,7 +10,6 @@
   background-position: center;
 
   &:hover {
-    transform: scale(1.05);
     .global-note,
     .actions-wrapper {
       opacity: 1;
@@ -40,10 +39,26 @@
     border-radius: 8px;
     height: 100%;
     width: 100%;
-    background: grey;
+    background: black;
     .poster {
       width: 100%;
     }
+  }
+
+  
+  &__release-date {
+    font-family:  inherit;
+    font-size: 18px;
+    font-weight: 400;
+    position: absolute;
+    top: var(--gutter-md);
+    z-index: 2;
+    text-shadow: 3px 1px 2px rgba(0, 0, 0);
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    font-style: italic;
   }
 
   .poster.unknown {

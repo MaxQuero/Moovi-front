@@ -2,16 +2,13 @@
   display: flex;
   overflow-x: hidden;
   width: calc(100vw - 60px);
+
   &__media {
+    position: relative;
     display: flex;
     height: 300px;
     margin: var(--gutter-md);
+    flex-shrink: 0;
   }
 
-  &__release-date {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    text-align: center;
-  }
 }

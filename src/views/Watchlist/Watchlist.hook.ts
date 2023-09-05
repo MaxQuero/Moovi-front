@@ -10,20 +10,6 @@ import {MediaEnum} from "../../interfaces/Media.interface";
 import {gql} from "@apollo/client";
 import {MutationUpdaterFunction} from "@apollo/client/core/types";
 
-const GET_WATCHLIST_MEDIAS = gql`
-    query GetWatchlistMedias($mediaType: String!, $accountId: Int!, $sessionId: String!,  $page: Int!) {
-        watchlistMedias(mediaType: $mediaType, accountId: $accountId, sessionId: $sessionId, page: $page) {
-            ... on Movie {
-                id
-
-            }
-
-            ... on TvShow {
-                id
-            }
-        }
-    }`
-
 export function useWatchlist() {
     const session: string = localStorage.getItem('user');
     const sessionId: string = JSON.parse(session).sessionId;

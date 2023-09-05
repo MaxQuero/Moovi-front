@@ -1,7 +1,12 @@
-import Moment from 'moment';
-
+ 
 export const formatDate: any = (date: any, format: string) => {
-  return Moment(date).format(format);
+
+
+  return Intl.DateTimeFormat('fr-FR',  {
+    day: 'numeric', 
+    month: 'short',
+    year: 'numeric'
+    }).format(date);
 };
 
 export const deepCopy = (value: any) => {

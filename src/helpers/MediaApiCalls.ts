@@ -11,14 +11,12 @@ export async function getRequestToken(): Promise<any> {
 export async function getUser(requestToken: any): Promise<any> {
   const urlSession = import.meta.env.VITE_BACK_URL + '/user/create';
 
-  console.info('verif', requestToken)
   const res = await callUrl(urlSession, {
     method: 'POST',
     body: JSON.stringify({ request_token: requestToken }),
     headers: { 'Content-type': 'application/json' },
   });
 
-  console.info('getUserRes', res)
   return res;
 }
 

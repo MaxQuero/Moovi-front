@@ -7,9 +7,6 @@
     opacity: 0.4;
   }
 
-  &.active {
-    color: #000000;
-  }
 
   &.rounded {
     display: flex;
@@ -32,12 +29,5 @@
       border-color: #000000;
     }
 
-    &.active {
-      color: var(--color-light);
-      opacity: 1;
-      border-color: #000000;
-
-      background: #000000;
-    }
   }
 }

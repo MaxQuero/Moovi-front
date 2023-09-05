@@ -6,16 +6,18 @@ import unknownMedia from '../../assets/img/unknownMedia.svg';
 import classNames from 'classnames';
 import {useNavigate} from "react-router-dom";
 import {Movie, TvShow} from "../../generated/graphql"; // relative path to image
+import { formatDate } from '../../helpers/Helpers';
 
 interface Props {
   media?: Movie | TvShow;
   getTheme?: any;
   hasActions?: boolean;
   className?: string;
+  displayReleaseDate ?: boolean;
 }
 
 
-function Media({ media, hasActions, className }: Props) {
+function Media({ media, hasActions, className, displayReleaseDate }: Props) {
   const navigate = useNavigate();
   const goToMediaDetailsPage = (media?: Movie | TvShow) => {
     navigate(`/${media?.type}/${media?.id}`);
@@ -25,6 +27,12 @@ function Media({ media, hasActions, className }: Props) {
     <div className={classNames('media', className)}>
       {media ? (
         <div className="poster-wrapper" role="presentation" onClick={() => goToMediaDetailsPage(media)}>
+          {displayReleaseDate && (
+            <span className="media__release-date">
+              {formatDate(media?.releaseDate, 'D MMMM YYYY')}
+            </span>
+          )}
+              
           <img
             className={classNames('poster', { unknown: !media?.poster })}
             crossOrigin="anonymous"

@@ -2,7 +2,7 @@
 
 .toggle__tabs {
   margin: var(--gutter-md) 0 0;
-  border-radius: 50px;
+  border-radius: 20px;
   color: black;
   background-image: linear-gradient(#ffdd00 0%, #fca11f 100%);
   display: inline-grid;
@@ -17,7 +17,7 @@
     margin-left: var(--toggle-button-margin-compensation);
     padding-right: calc(-1 * var(--toggle-button-margin-compensation) + var(--gutter-md));
     padding-left: calc(-1 * var(--toggle-button-margin-compensation) + var(--gutter-md));
-    border-radius: 50px;
+    border-radius: 20px;
     z-index: 0;
     text-align: center;
     transition: background, color 0.3s ease-in-out;

@@ -11,7 +11,6 @@ import { MediaEnum } from './interfaces/Media.interface';
 import MediaDetails from './views/MediaDetails/MediaDetails';
 import {Routes} from "react-router-dom"
 function App(props: any): JSX.Element {
-  console.info('props app', props)
   const Content = () => {
     const location = useLocation();
 

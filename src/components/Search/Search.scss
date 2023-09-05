@@ -5,10 +5,14 @@
   padding: 0 0 0 var(--gutter-md);
   border-radius: 30px;
   box-shadow: var(--box-shadow-medium);
+  flex-grow: 1;
+  background-color: rgb(235,236,240);
 
+justify-content: center;
   &__input {
     display: flex;
     width: 100%;
+    background-color: rgb(235,236,240);
   }
 
   &__button {

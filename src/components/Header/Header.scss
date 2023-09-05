@@ -7,6 +7,9 @@
   box-shadow: var(--box-shadow-medium);
   background: white;
   z-index: 999;
+  position: sticky;
+  top: 0;
+  align-items: center;
 }
 
 .nav {
@@ -14,7 +17,7 @@
   display: flex;
   justify-content: flex-start;
   align-items: stretch;
-  margin-left: var(--gutter-lg);
+  margin-left: auto;
 
   &__item {
     z-index: 100;
@@ -43,4 +46,5 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   padding: var(--gutter-md) 0 var(--gutter-md) var(--gutter-xl);
+  margin-right: var(--gutter-lg);
 }

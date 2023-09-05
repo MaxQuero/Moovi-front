@@ -17,8 +17,8 @@ type MediasListProps = {
 };
 function MediasList({title, medias, loading, setElementsFilteredFunc, displayReleaseDate, className} : MediasListProps) {
   return (
-      <div className={classNames("medias__section", className)}>
-        <p className="medias__section__title">{title}</p>
+      <div className={classNames("medias-list", className)}>
+        <p className="medias-list__title">{title}</p>
         <ToggleButton
             config={[MediaEnum.Movie, MediaEnum.Tv]}
             setElementsFilteredFunc={(mediaType: MediaEnum) => setElementsFilteredFunc({variables: {mediaType}})}
